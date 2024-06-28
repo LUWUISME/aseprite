@@ -26,7 +26,7 @@ jobs:
     - uses: ilammy/msvc-dev-cmd@v1
       if: runner.os == 'Windows'
     - name: Install Dependencies
-      shell: bash
+      shell: bash	
       run: |
         if [[ "${{ runner.os }}" == "Linux" ]] ; then
           sudo apt-get update -qq
@@ -53,6 +53,7 @@ jobs:
           -DSKIA_LIBRARY=./skia/out/Release-x64/skia.lib
     - name: Compiling
       shell: bash
+
       run: |
         cd build && ninja
     - uses: actions/upload-artifact@v3
@@ -60,4 +61,4 @@ jobs:
         name: aseprite
         path: |
           D:/a/aseprite/aseprite/build/bin/data
-          D:/a/aseprite/aseprite/build/bin/aseprite.exe 
+          D:/a/aseprite/aseprite/build/bin/aseprite.exe
