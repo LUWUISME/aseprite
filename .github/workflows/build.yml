@@ -53,7 +53,6 @@ jobs:
           -DSKIA_LIBRARY=./skia/out/Release-x64/skia.lib
     - name: Compiling
       shell: bash
-
       run: |
         cd build && ninja
     - uses: actions/upload-artifact@v3
